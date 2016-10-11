@@ -69,13 +69,17 @@ func pointsTup(x: Double, y: Double) -> (Double, Double) {
 }
 
 //add point pairs
-func pointsTupAdd(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
-    return (xA + xB, yA + yB)
+func pointsAddSubtract(xyA: (Double, Double), xyB: (Double, Double)) -> (Double, Double) {
+    let x : Double = xyA.0 + xyB.0
+    let y : Double = xyA.1 + xyB.1
+    return (x, y)
 }
 
 //subtract point pairs
-func pointsTupSubtract(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
-    return (xA - xB, yA - yB)
+func pointsTupSubtract(xyA: (Double, Double), xyB: (Double, Double)) -> (Double, Double) {
+    let x : Double = xyA.0 - xyB.0
+    let y : Double = xyA.1 - xyB.1
+    return (x, y)
 }
 
 //dict calculation - "Points"
