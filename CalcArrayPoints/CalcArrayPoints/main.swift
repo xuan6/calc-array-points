@@ -40,7 +40,7 @@ func addArray(arrayFun: [Double]) -> Double {
 
 //take an array for multiply
 func multiplyArray(arrayFun: [Double]) -> Double {
-    return arrayFun.reduce(0, *)
+    return arrayFun.reduce(1, *)
 }
 
 //count an array
@@ -53,6 +53,12 @@ func countArray(arrayFun: [Double]) -> Double {
 }
 
 //calculate the average of an array
-func averageArray(avgArray: [Double]) -> Double {
-    return addArray(arrayFun: avgArray)/countArray(arrayFun: avgArray)
+func averageArray(arrayFun: [Double]) -> Double {
+    return addArray(arrayFun: arrayFun)/countArray(arrayFun: arrayFun)
+}
+
+
+//generic calculation for array
+func genericArray(arrayFun: [Double], op: ([Double]) -> Double)-> Double {
+   return op(arrayFun)
 }
