@@ -64,16 +64,25 @@ func genericArray(arrayFun: [Double], op: ([Double]) -> Double)-> Double {
 }
 
 //tuple calculation - "Points"
-func points(x: Double, y: Double) -> (Double, Double) {
+func pointsTup(x: Double, y: Double) -> (Double, Double) {
     return (x, y)
 }
 
 //add point pairs
-func pointsAdd(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
+func pointsTupAdd(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
     return (xA + xB, yA + yB)
 }
 
 //subtract point pairs
-func pointsSubtract(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
+func pointsTupSubtract(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
     return (xA - xB, yA - yB)
 }
+
+//dict calculation - "Points"
+func pointsDic(x: Double, y: Double) -> [String:Double] {
+    return ["x": x, "y": y]
+}
+
+//func pointsDicAdd(xA: Double, yA: Double, xB: Double, yB: Double, op: ()) -> (Double, Double) {
+//    return (xA - xB, yA - yB)
+//}
