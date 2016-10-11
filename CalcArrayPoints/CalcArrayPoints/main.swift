@@ -62,3 +62,8 @@ func averageArray(arrayFun: [Double]) -> Double {
 func genericArray(arrayFun: [Double], op: ([Double]) -> Double)-> Double {
    return op(arrayFun)
 }
+
+//tuple calculation - "Points"
+func points(x: Double, y: Double) -> (Double, Double) {
+    return (x, y)
+}
