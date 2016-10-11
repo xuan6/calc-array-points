@@ -83,6 +83,17 @@ func pointsDic(x: Double, y: Double) -> [String:Double] {
     return ["x": x, "y": y]
 }
 
-//func pointsDicAdd(xA: Double, yA: Double, xB: Double, yB: Double, op: ()) -> (Double, Double) {
-//    return (xA - xB, yA - yB)
-//}
+//use dictionary to add 2 pairs
+func pointsDicAdd(pairA: [String:Double], pairB: [String:Double]) -> [String:Double] {
+    let x : Double = pairA["x"]! + pairB["x"]!
+    let y : Double = pairA["y"]! + pairB["y"]!
+    return ["x":x, "y":y]
+}
+
+//use dictionary to substract 2 pairs
+func pointsDicSubtract(pairA: [String:Double], pairB: [String:Double]) -> [String:Double] {
+    let x : Double = pairA["x"]! - pairB["x"]!
+    let y : Double = pairA["y"]! - pairB["y"]!
+    return ["x":x, "y":y]
+}
+
