@@ -29,7 +29,7 @@ func divide(left: Double, right: Double) -> Double {
 }
 
 //take two numbers at once for +, -, *, /.
-func addGenericResult (left: Double, right: Double, op : (Double, Double) -> Double) -> Double {
+func genericCal (left: Double, right: Double, op : (Double, Double) -> Double) -> Double {
     return op(left, right)
 }
 
@@ -44,8 +44,8 @@ func multiplyArray(arrayFun: [Double]) -> Double {
 }
 
 //count an array
-func countArray(arrayFun: [Double]) -> Int {
-    var count : Int = 0
+func countArray(arrayFun: [Double]) -> Double {
+    var count : Double = 0
     for _ in arrayFun{
         count = count + 1
     }
@@ -53,6 +53,6 @@ func countArray(arrayFun: [Double]) -> Int {
 }
 
 //calculate the average of an array
-func averageArray(arrayFun: [Double]) -> Double {
-    return addArray(arrayFun)/countArray(arrayFun)
+func averageArray(avgArray: [Double]) -> Double {
+    return addArray(arrayFun: avgArray)/countArray(arrayFun: avgArray)
 }
