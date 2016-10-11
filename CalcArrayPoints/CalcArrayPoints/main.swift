@@ -67,3 +67,13 @@ func genericArray(arrayFun: [Double], op: ([Double]) -> Double)-> Double {
 func points(x: Double, y: Double) -> (Double, Double) {
     return (x, y)
 }
+
+//add point pairs
+func pointsAdd(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
+    return (xA + xB, yA + yB)
+}
+
+//subtract point pairs
+func pointsSubtract(xA: Double, yA: Double, xB: Double, yB: Double) -> (Double, Double) {
+    return (xA - xB, yA - yB)
+}
