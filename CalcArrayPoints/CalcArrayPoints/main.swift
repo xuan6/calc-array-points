@@ -43,7 +43,7 @@ func multiplyArray(arrayFun: [Double]) -> Double {
     return arrayFun.reduce(1, *)
 }
 
-//count an array
+//count an array, wonder why unittes says we should use reduce to do that??
 func countArray(arrayFun: [Double]) -> Double {
     var count : Double = 0
     for _ in arrayFun{
@@ -89,15 +89,78 @@ func pointsDic(x: Double, y: Double) -> [String:Double] {
 
 //use dictionary to add 2 pairs
 func pointsDicAdd(pairA: [String:Double], pairB: [String:Double]) -> [String:Double] {
-    let x : Double = pairA["x"]! + pairB["x"]!
-    let y : Double = pairA["y"]! + pairB["y"]!
-    return ["x":x, "y":y]
+    //for error handeling
+    var status : Bool = false //nothing in keys are non-x/non-y
+    var x : Double = 0
+    var y : Double = 0
+    var keys = [String]()
+    
+    for key in pairA.keys{
+        keys.append(key)
+    }
+    
+    for key in pairB.keys{
+        keys.append(key)
+    }
+    
+    var startLoop : Bool = true
+    while startLoop == true{
+        for i in keys{
+            if (i != "x" && i != "y"){ //something in keys is non-x/non-y
+                status = true //change the status
+                startLoop = false //exit loop
+            }
+            startLoop = false //exit while loop when for loop ends
+        }
+    }
+    //no error then calculate the add
+    if status == false {
+        x = pairA["x"]! + pairB["x"]!
+        y = pairA["y"]! + pairB["y"]!
+    }
+    
+    //show error message if any
+    if status == true {
+        print("You entered keys that are neither 'x' nor 'y', so the result is (x:0, y:0). Please re-specify keys.")
+    }
+    return ["x":x, "y":y] //still don't know how to mute the return when there is an error; tried but xcode asked me for 'return' at the end of the function
 }
 
 //use dictionary to substract 2 pairs
 func pointsDicSubtract(pairA: [String:Double], pairB: [String:Double]) -> [String:Double] {
-    let x : Double = pairA["x"]! - pairB["x"]!
-    let y : Double = pairA["y"]! - pairB["y"]!
+    //for error handeling
+    var status : Bool = false //nothing in keys are non-x/non-y
+    var x : Double = 0
+    var y : Double = 0
+    var keys = [String]()
+    
+    for key in pairA.keys{
+        keys.append(key)
+    }
+    
+    for key in pairB.keys{
+        keys.append(key)
+    }
+    
+    var startLoop : Bool = true
+    while startLoop == true{
+        for i in keys{
+            if (i != "x" && i != "y"){ //something in keys is non-x/non-y
+                status = true //change the status
+                startLoop = false //exit loop
+            }
+            startLoop = false //exit while loop when for loop ends
+        }
+    }
+    //no error then calculate the sub
+    if status == false {
+        x = pairA["x"]! - pairB["x"]!
+        y = pairA["y"]! - pairB["y"]!
+    }
+    
+    //show error message if any
+    if status == true {
+        print("You entered keys that are neither 'x' nor 'y', so the result is (x:0, y:0). Please re-specify keys.")
+    }
     return ["x":x, "y":y]
 }
-
